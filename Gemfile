@@ -12,6 +12,7 @@ gem 'devise'
 gem 'ckeditor'
 gem 'paperclip'
 gem 'formtastic'
+gem 'cancan'
 
 # Gems used only for assets and not required
 # in production environments by default.
