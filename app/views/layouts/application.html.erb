@@ -50,8 +50,8 @@
           <div class="container nav-collapse">
             <ul class="nav">
               <li><%= link_to "Blog", posts_path  %></li>
-              <li><%= link_to "Resources", "/resources"  %></li>
-              <li><%= link_to "Timeline", "/timeline"  %></li>
+              <li><%= link_to "Resources", resources_path  %></li>
+              <li><%= link_to "Timeline", timelines_path  %></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <% if user_signed_in? %>

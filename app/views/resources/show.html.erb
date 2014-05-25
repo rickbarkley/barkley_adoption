@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>R content:</b>
+  <%=h @resource.r_content.html_safe %>
+</p>
+
+<p>
+  <b>Amazon:</b>
+  <%=h @resource.amazon.html_safe %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%=h @resource.desc.html_safe %>
+</p>
+
+<% if user_signed_in? %>
+	<% if current_user.has_role? :admin %>
+<%= link_to 'Edit', edit_resource_path(@resource) %> |
+<% end %>
+<% end %>
+<%= link_to 'Back', resources_path %>

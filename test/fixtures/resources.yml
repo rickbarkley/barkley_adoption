@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  r_content: MyString
+  amazon: MyString
+  desc: MyString
+
+two:
+  r_content: MyString
+  amazon: MyString
+  desc: MyString

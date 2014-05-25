@@ -1,0 +1,24 @@
+<h1>Timeline</h1>
+
+
+<% @timelines.each do |timeline| %>
+  <tr>
+    <%=h timeline.t_content.html_safe %>
+
+        <% if user_signed_in? %>
+  <% if current_user.has_role? :admin %>
+    <td><%= link_to 'Show', timeline %></td>
+    <td><%= link_to 'Edit', edit_timeline_path(timeline) %></td>
+    <td><%= link_to 'Destroy', timeline, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
+    <% end %>
+
+<% end %>
+
+
+<br />
+<% if user_signed_in? %>
+  <% if current_user.has_role? :admin %>
+<%= link_to 'New Timeline', new_timeline_path %>
+<% end %>
+<% end %>

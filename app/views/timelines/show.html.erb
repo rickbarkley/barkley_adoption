@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+<% if user_signed_in? %>
+	<% if current_user.has_role? :admin %>
+<p>
+  <b>content:</b>
+  <%=h @timeline.t_content.html_safe %>
+</p>
+
+<% end %>
+<% end %>
+<%= link_to 'Edit', edit_timeline_path(@timeline) %> |
+<%= link_to 'Back', timelines_path %>

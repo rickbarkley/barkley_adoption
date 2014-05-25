@@ -1,0 +1,29 @@
+<%= form_for(@resource) do |f| %>
+  <% if @resource.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@resource.errors.count, "error") %> prohibited this resource from being saved:</h2>
+
+      <ul>
+      <% @resource.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :r_content, "resource description" %><br />
+    <%= f.cktext_area :r_content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} } %>
+  </div>
+  <div class="field">
+    <%= f.label :amazon, "Amazon Link" %><br />
+    <%= f.cktext_area :amazon, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} } %>
+  </div>
+  <div class="field">
+    <%= f.label :desc, "Another Random Field" %><br />
+    <%= f.cktext_area :desc, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} } %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

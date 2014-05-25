@@ -1,0 +1,9 @@
+<h1>Editing timeline</h1>
+<% if user_signed_in? %>
+	<% if current_user.has_role? :admin %>
+<%= render 'form' %>
+<% end %>
+<% end %>
+
+<%= link_to 'Show', @timeline %> |
+<%= link_to 'Back', timelines_path %>

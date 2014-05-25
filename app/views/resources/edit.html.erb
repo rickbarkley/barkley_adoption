@@ -1,0 +1,9 @@
+<h1>Editing resource</h1>
+<% if user_signed_in? %>
+	<% if current_user.has_role? :admin %>
+<%= render 'form' %>
+
+<%= link_to 'Show', @resource %> |
+<%= link_to 'Back', resources_path %>
+<% end %>
+<% end %>

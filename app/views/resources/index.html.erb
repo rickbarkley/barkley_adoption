@@ -1,0 +1,27 @@
+<h1>Adoption Resources</h1>
+
+
+
+<% @resources.each do |resource| %>
+
+    <%=h resource.r_content.html_safe %>
+    <%=h resource.amazon.html_safe %>
+    <%=h resource.desc.html_safe %>
+
+          <% if user_signed_in? %>
+  <% if current_user.has_role? :admin %>
+    <%= link_to 'Show', resource %>
+
+    <%= link_to 'Edit', edit_resource_path(resource) %>
+    <%= link_to 'Destroy', resource, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+    <% end %>
+
+<% end %>
+
+<br />
+<% if user_signed_in? %>
+  <% if current_user.has_role? :admin %>
+<%= link_to 'New Resource', new_resource_path %>
+<% end %>
+<% end %>

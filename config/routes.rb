@@ -1,4 +1,13 @@
 BarkleyAdoption::Application.routes.draw do
+  resources :resources
+
+
+  resources :timelines
+
+
+  resources :comments
+
+
   devise_for :users
 
   mount Ckeditor::Engine => '/ckeditor'
