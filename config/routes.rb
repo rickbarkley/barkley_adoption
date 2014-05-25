@@ -1,4 +1,19 @@
 BarkleyAdoption::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+
+  resources :posts
+
+
+  get "pages/home"
+
+  get "pages/about"
+
+  get "pages/donate"
+
+  get "pages/resources"
+
+  root :to => 'pages#home'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
