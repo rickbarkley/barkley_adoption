@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_filter :authenticate_user!, :only => [:new, :edit] 
   # GET /posts
   # GET /posts.json
   def index
@@ -24,6 +25,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   # GET /posts/new.json
   def new
+    authorize! :new, @user, :message => 'Not authorized as an administrator.'
     @post = Post.new
 
     respond_to do |format|
@@ -34,12 +36,14 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    authorize! :new, @user, :message => 'Not authorized as an administrator.'
     @post = Post.find(params[:id])
   end
 
   # POST /posts
   # POST /posts.json
   def create
+    authorize! :new, @user, :message => 'Not authorized as an administrator.'
     @post = Post.new(params[:post])
 
     respond_to do |format|
@@ -56,6 +60,7 @@ class PostsController < ApplicationController
   # PUT /posts/1
   # PUT /posts/1.json
   def update
+    authorize! :new, @user, :message => 'Not authorized as an administrator.'
     @post = Post.find(params[:id])
 
     respond_to do |format|
@@ -72,6 +77,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
+    authorize! :new, @user, :message => 'Not authorized as an administrator.'
     @post = Post.find(params[:id])
     @post.destroy
 
