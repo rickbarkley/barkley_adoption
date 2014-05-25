@@ -10,9 +10,14 @@ BarkleyAdoption::Application.routes.draw do
 
   get "pages/donate"
 
+  get "pages/timeline"
+
   get "pages/resources"
 
   root :to => 'pages#home'
+
+  match '/resources', :to => 'pages#resources'
+  match '/timeline', :to => 'pages#timeline'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
