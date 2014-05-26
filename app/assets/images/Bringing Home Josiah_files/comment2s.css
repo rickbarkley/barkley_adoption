@@ -1,0 +1,11 @@
+/* line 4, ../../app/assets/stylesheets/comment2s.css.scss */
+form.new_comment2 textarea {
+  height: 4em;
+  width: 30em;
+  margin-bottom: 0;
+}
+
+/* line 10, ../../app/assets/stylesheets/comment2s.css.scss */
+#author {
+  text-align: left;
+}
