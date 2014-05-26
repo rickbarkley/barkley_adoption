@@ -1,0 +1,11 @@
+
+
+<%= div_for comment2 do %>
+        <p>
+                <strong>
+                        Posted <%= time_ago_in_words(comment2.created_at) %> ago
+                </strong>
+                <br/>
+                <%= comment2.body %>
+        </p>
+<% end %>

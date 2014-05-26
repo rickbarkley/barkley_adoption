@@ -4,7 +4,6 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
@@ -43,8 +42,9 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    authorize! :new, @user, :message => 'Not authorized as an administrator.'
+
     @post = Post.new(params[:post])
+    @comment2 = @post.comment2s.create!(params[:comment2])
 
     respond_to do |format|
       if @post.save

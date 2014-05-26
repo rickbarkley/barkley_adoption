@@ -14,6 +14,49 @@
   <b>Author:</b>
   <em><%= @post.author %></em>
 </p>
+<br />
+
+ <h2>Comments</h2>
+ <% for comment2 in @post.comment2s %>
+ <%= comment2.body %>
+ asdfasdf
+ <% end %>
+ <div id="comments">
+         <%= render :partial => @post.comment2s %>
+ </div>
+<script src="https://code.jquery.com/jquery.js"></script>
+<script>
+
+
+$(document).ready(function() {
+	$("#comment_show").click(function() {
+		$("#comment").show();
+		$("#comment_show").hide();
+	});
+	$("#hide").click(function() {
+		$("#comment").hide();
+		$("#comment_show").show();
+}); 
+});
+</script>
+<div id="comment_show">
+	<p class="btn btn-primary" value="Add a Comment">Add a Comment</p>
+</div>
+
+<div id="comment">
+<%= form_for [@post, Comment2.new] do |f| %>
+
+		<p>
+                <%= f.label :author, "Name" %><br/>
+                <%= f.text_field :author %>
+        </p>
+        <p>
+                <%= f.label :body, "New Comment" %><br/>
+                <%= f.text_area :body %>
+        </p>
+        <p><%= f.submit "Add comment" %> <i id="hide"class="btn btn-danger" value="Cancel"> Cancel</i></p>
+<% end %>
+</div>
 
 <% if user_signed_in? %>
 	<% if current_user.has_role? :admin %>

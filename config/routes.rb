@@ -1,4 +1,7 @@
 BarkleyAdoption::Application.routes.draw do
+
+
+
   resources :resources
 
 
@@ -12,7 +15,9 @@ BarkleyAdoption::Application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
 
-  resources :posts
+  resources :posts do
+    resources :comment2s, :only => [:create]
+  end
 
 
   get "pages/home"
