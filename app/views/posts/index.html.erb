@@ -1,5 +1,3 @@
-<div class="hero-unit">
-
 
 
 <% @posts.each do |post| %>
@@ -12,7 +10,7 @@
 
 
 
-<%= link_to 'Show', post %>
+<%= link_to 'View Post/Comment', post %>
 <% if user_signed_in? %>
   <% if current_user.has_role? :admin %>
 <%= link_to 'Edit', edit_post_path(post) %>
@@ -28,4 +26,3 @@
 <%= link_to 'New Post', new_post_path %>
 <% end %>
 <% end %>
-</div>
