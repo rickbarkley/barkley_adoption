@@ -6,6 +6,8 @@
                         Posted <%= time_ago_in_words(comment2.created_at) %> ago
                 </strong>
                 <br/>
-                <%= comment2.body %>
+                <%= comment2.body %><br />
+                <em id="author"> -<%= comment2.author %></em>
+
         </p>
 <% end %>
