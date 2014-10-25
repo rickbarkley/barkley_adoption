@@ -10,7 +10,7 @@
 
 
 
-<%= link_to 'View Post/Comment', post %>
+<%#
 <% if user_signed_in? %>
   <% if current_user.has_role? :admin %>
 <%= link_to 'Edit', edit_post_path(post) %>
@@ -23,6 +23,6 @@
 <br />
 <% if user_signed_in? %>
   <% if current_user.has_role? :admin %>
-<%= link_to 'New Post', new_post_path %>
+<p><%= link_to 'New Post', new_post_path %></p>
 <% end %>
 <% end %>
