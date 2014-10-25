@@ -44,7 +44,7 @@ class PostsController < ApplicationController
   def create
 
     @post = Post.new(params[:post])
-    @comment2 = @post.comment2s.create!(params[:comment2])
+  #  @comment2 = @post.comment2s.create!(params[:comment2])
 
     respond_to do |format|
       if @post.save

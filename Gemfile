@@ -13,6 +13,8 @@ gem 'ckeditor'
 gem 'paperclip'
 gem 'formtastic'
 gem 'cancan'
+gem "annotate"
+gem 'gravatar_image_tag'
 
 # Gems used only for assets and not required
 # in production environments by default.
