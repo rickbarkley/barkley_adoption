@@ -2,7 +2,7 @@ class TimelinesController < ApplicationController
   # GET /timelines
   # GET /timelines.json
   def index
-    @timelines = Timeline.all
+    @timelines = Timeline.find(:all, :order => 'created_at DESC')
 
     respond_to do |format|
       format.html # index.html.erb
